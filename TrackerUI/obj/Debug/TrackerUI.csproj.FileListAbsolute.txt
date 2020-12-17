@@ -1,0 +1,10 @@
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\bin\Debug\TrackerUI.exe.config
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\bin\Debug\TrackerUI.exe
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\bin\Debug\TrackerUI.pdb
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.csprojAssemblyReference.cache
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.Properties.Resources.resources
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.TournamentViewerForm.resources
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.csproj.GenerateResource.cache
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.csproj.CoreCompileInputs.cache
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.exe
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.pdb

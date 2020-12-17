@@ -74,7 +74,7 @@ namespace TrackerUI
             this.roundLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.roundLabel.Location = new System.Drawing.Point(46, 120);
             this.roundLabel.Name = "roundLabel";
-            this.roundLabel.Size = new System.Drawing.Size(124, 46);
+            this.roundLabel.Size = new System.Drawing.Size(122, 45);
             this.roundLabel.TabIndex = 2;
             this.roundLabel.Text = "Round:";
             // 
@@ -94,7 +94,7 @@ namespace TrackerUI
             this.unplayedOnlyCheckbox.ForeColor = System.Drawing.SystemColors.Highlight;
             this.unplayedOnlyCheckbox.Location = new System.Drawing.Point(176, 170);
             this.unplayedOnlyCheckbox.Name = "unplayedOnlyCheckbox";
-            this.unplayedOnlyCheckbox.Size = new System.Drawing.Size(257, 50);
+            this.unplayedOnlyCheckbox.Size = new System.Drawing.Size(253, 49);
             this.unplayedOnlyCheckbox.TabIndex = 4;
             this.unplayedOnlyCheckbox.Text = "Unplayed Only";
             this.unplayedOnlyCheckbox.UseVisualStyleBackColor = true;
@@ -116,7 +116,7 @@ namespace TrackerUI
             this.teamOneName.ForeColor = System.Drawing.SystemColors.Highlight;
             this.teamOneName.Location = new System.Drawing.Point(476, 241);
             this.teamOneName.Name = "teamOneName";
-            this.teamOneName.Size = new System.Drawing.Size(208, 46);
+            this.teamOneName.Size = new System.Drawing.Size(203, 45);
             this.teamOneName.TabIndex = 6;
             this.teamOneName.Text = "<team one>";
             // 
@@ -127,7 +127,7 @@ namespace TrackerUI
             this.teamOneScoreLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.teamOneScoreLabel.Location = new System.Drawing.Point(476, 315);
             this.teamOneScoreLabel.Name = "teamOneScoreLabel";
-            this.teamOneScoreLabel.Size = new System.Drawing.Size(104, 46);
+            this.teamOneScoreLabel.Size = new System.Drawing.Size(100, 45);
             this.teamOneScoreLabel.TabIndex = 7;
             this.teamOneScoreLabel.Text = "Score";
             // 
@@ -152,7 +152,7 @@ namespace TrackerUI
             this.teamTwoScoreLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.teamTwoScoreLabel.Location = new System.Drawing.Point(476, 527);
             this.teamTwoScoreLabel.Name = "teamTwoScoreLabel";
-            this.teamTwoScoreLabel.Size = new System.Drawing.Size(104, 46);
+            this.teamTwoScoreLabel.Size = new System.Drawing.Size(100, 45);
             this.teamTwoScoreLabel.TabIndex = 10;
             this.teamTwoScoreLabel.Text = "Score";
             // 
@@ -163,7 +163,7 @@ namespace TrackerUI
             this.teamTwoLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.teamTwoLabel.Location = new System.Drawing.Point(476, 453);
             this.teamTwoLabel.Name = "teamTwoLabel";
-            this.teamTwoLabel.Size = new System.Drawing.Size(208, 46);
+            this.teamTwoLabel.Size = new System.Drawing.Size(202, 45);
             this.teamTwoLabel.TabIndex = 9;
             this.teamTwoLabel.Text = "<team two>";
             // 
@@ -174,7 +174,7 @@ namespace TrackerUI
             this.versusLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.versusLabel.Location = new System.Drawing.Point(538, 387);
             this.versusLabel.Name = "versusLabel";
-            this.versusLabel.Size = new System.Drawing.Size(87, 46);
+            this.versusLabel.Size = new System.Drawing.Size(85, 45);
             this.versusLabel.TabIndex = 12;
             this.versusLabel.Text = "-VS-";
             // 
@@ -214,7 +214,7 @@ namespace TrackerUI
             this.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "TournamentViewerForm";
-            this.Text = "TournamentViewerForm";
+            this.Text = "Tournament Viewer ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

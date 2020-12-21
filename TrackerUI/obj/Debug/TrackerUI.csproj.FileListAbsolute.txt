@@ -8,7 +8,10 @@ C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.csproj.CoreCompileInputs.cache
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.exe
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.pdb
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.prizePercentageValue.resources
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.CreateTeamForm.resources
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.CreateTournament.resources
 C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.TournamentDashBoardForm.resources
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.CreatePrizeForm.resources
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\bin\Debug\TrackerLibrary.dll
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\bin\Debug\TrackerLibrary.pdb
+C:\Users\miria\Documents\GitHub\TournementTracker\TrackerUI\obj\Debug\TrackerUI.csproj.CopyComplete

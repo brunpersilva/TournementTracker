@@ -1,4 +1,4 @@
-﻿using TrackerLibrary.Entities;
+﻿using TrackerLibrary.Models;
 
 namespace TrackerLibrary.Connections
 {

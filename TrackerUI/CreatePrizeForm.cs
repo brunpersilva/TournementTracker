@@ -8,8 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary.Connections;
-using TrackerLibrary.Entities;
-
+using TrackerLibrary.Models;
 namespace TrackerUI
 {
     public partial class CreatePrizeForm : Form
@@ -24,18 +23,15 @@ namespace TrackerUI
             if (ValidadeForm())
             {
                 PrizeModel model = new PrizeModel(
-                    placeNumberValue.Text,
                     placeNameValue.Text,
+                    placeNumberValue.Text,
                     prizeAmountValue.Text,
                     prizePercentageValue.Text);
 
-                foreach (IDataConnection db in GlobalConfig.Connection)
-                {
-                    db.CreatePrize(model);
-                }
+                GlobalConfig.Connection.CreatePrize(model);
 
-                placeNumberValue.Text = "";
                 placeNameValue.Text = "";
+                placeNumberValue.Text = "";
                 prizeAmountValue.Text = "0";
                 prizePercentageValue.Text = "0";
 

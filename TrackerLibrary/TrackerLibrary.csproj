@@ -41,13 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MatchupEntryModel.cs" />
-    <Compile Include="MatchupModel.cs" />
-    <Compile Include="PersonModel.cs" />
-    <Compile Include="PrizeModel.cs" />
+    <Compile Include="Connetions\GlobalConfig.cs" />
+    <Compile Include="Connetions\IDataConnection.cs" />
+    <Compile Include="Entities\MatchupEntryModel.cs" />
+    <Compile Include="Entities\MatchupModel.cs" />
+    <Compile Include="Entities\PersonModel.cs" />
+    <Compile Include="Entities\PrizeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TeamModel.cs" />
-    <Compile Include="TournamentModel.cs" />
+    <Compile Include="Connetions\SqlConnector.cs" />
+    <Compile Include="Entities\TeamModel.cs" />
+    <Compile Include="Connetions\TextConnection.cs" />
+    <Compile Include="Entities\TournamentModel.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,7 +14,7 @@ namespace TrackerLibrary.Connections
 
         public static void InitializedConnections(DatabaseType db)
         {
-            
+
             if (db == DatabaseType.Sql)
             {
                 // TODO - Set up the sql properly
@@ -29,7 +29,6 @@ namespace TrackerLibrary.Connections
                 Connection = text
 ;
             }
-
 
         }
         public static string CnnString(string name)

@@ -1,4 +1,4 @@
-﻿namespace TrackerLibrary.Connections
+﻿namespace TrackerLibrary.Models
 {
     internal class PrizeModels
     {

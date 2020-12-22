@@ -12,6 +12,8 @@ namespace TrackerLibrary.Connections
     {
         private const string PrizesFile = "PrizeModels.csv";
 
+        
+
         // TODO - Wire up the CreatePrize for text files.
         public PrizeModel CreatePrize(PrizeModel model)
         {
@@ -40,5 +42,9 @@ namespace TrackerLibrary.Connections
 
         }
 
+        public PersonModel CreatePerson(PersonModel model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

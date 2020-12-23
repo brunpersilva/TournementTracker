@@ -14,23 +14,36 @@ namespace TrackerUI
 {
     public partial class CreateTeamForm : Form
     {
+        private List<PersonModel> availableTeamMembers = GlobalConfig.Connection.GetPerson_All();
+        private List<PersonModel> selectectTeamMembers = new List<PersonModel>();
+
         public CreateTeamForm()
         {
             InitializeComponent();
+            //CreateSampleData(); 
+            WireupList();
         }
 
-        private void CreateTeamForm_Load(object sender, EventArgs e)
+        private void CreateSampleData()
         {
+            availableTeamMembers.Add(new PersonModel { FirstName = "Bruno", LastName = "Silva" });
+            availableTeamMembers.Add(new PersonModel { FirstName = "john", LastName = "wick" });
+            availableTeamMembers.Add(new PersonModel { FirstName = "laila", LastName = "maria" });
 
+            selectectTeamMembers.Add(new PersonModel { FirstName = "roberto", LastName = "carlos" });
+            selectectTeamMembers.Add(new PersonModel { FirstName = "mari", LastName = "creide" });
+            selectectTeamMembers.Add(new PersonModel { FirstName = "sonic", LastName = "hedgehog" });
         }
 
-        private void headerLabel_Click(object sender, EventArgs e)
+        private void WireupList()
         {
+            selectTeamMwmberDropDown.DataSource = null;
+            selectTeamMwmberDropDown.DataSource = availableTeamMembers;
+            selectTeamMwmberDropDown.DisplayMember = "FullName";
 
-        }
-
-        private void createTeamButton_Click(object sender, EventArgs e)
-        {
+            teamMembersListBox.DataSource = null;
+            teamMembersListBox.DataSource = selectectTeamMembers;
+            teamMembersListBox.DisplayMember = "FullName";
 
         }
 
@@ -45,8 +58,9 @@ namespace TrackerUI
                 p.EmailAdress = emailValue.Text;
                 p.CellPhoneNumber = cellPhoneValue.Text;
 
-                GlobalConfig.Connection.CreatePerson(p);
-
+                p = GlobalConfig.Connection.CreatePerson(p);
+                selectectTeamMembers.Add(p);
+                WireupList();
 
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
@@ -80,6 +94,32 @@ namespace TrackerUI
                 return false;
             }
             return true;
+        }
+
+        private void addTeamMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)selectTeamMwmberDropDown.SelectedItem;
+            if (p != null)
+            {
+                availableTeamMembers.Remove(p); //Remove from available list
+                selectectTeamMembers.Add(p);   //Added to Selected List
+
+                WireupList();
+            }
+
+        }
+
+        private void removeSelectedMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)teamMembersListBox.SelectedItem;
+
+            if (p != null)
+            {
+                selectectTeamMembers.Remove(p);
+                availableTeamMembers.Add(p);
+
+                WireupList();
+            }
         }
     }
 }

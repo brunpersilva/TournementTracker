@@ -61,6 +61,8 @@ namespace TrackerLibrary.Connections.TextHelpers
                 p.LastName = cols[2];
                 p.EmailAdress = cols[3];
                 p.CellPhoneNumber = cols[4];
+
+                output.Add(p);
             }
 
             return output;

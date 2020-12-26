@@ -55,7 +55,7 @@ namespace TrackerUI
             this.headerLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.headerLabel.Location = new System.Drawing.Point(48, 29);
             this.headerLabel.Name = "headerLabel";
-            this.headerLabel.Size = new System.Drawing.Size(411, 65);
+            this.headerLabel.Size = new System.Drawing.Size(323, 51);
             this.headerLabel.TabIndex = 1;
             this.headerLabel.Text = "Create Tournament";
             // 
@@ -63,7 +63,7 @@ namespace TrackerUI
             // 
             this.tournamentNameValue.Location = new System.Drawing.Point(77, 181);
             this.tournamentNameValue.Name = "tournamentNameValue";
-            this.tournamentNameValue.Size = new System.Drawing.Size(357, 43);
+            this.tournamentNameValue.Size = new System.Drawing.Size(357, 36);
             this.tournamentNameValue.TabIndex = 11;
             // 
             // tournamentNameLabel
@@ -73,7 +73,7 @@ namespace TrackerUI
             this.tournamentNameLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.tournamentNameLabel.Location = new System.Drawing.Point(51, 110);
             this.tournamentNameLabel.Name = "tournamentNameLabel";
-            this.tournamentNameLabel.Size = new System.Drawing.Size(290, 45);
+            this.tournamentNameLabel.Size = new System.Drawing.Size(236, 37);
             this.tournamentNameLabel.TabIndex = 10;
             this.tournamentNameLabel.Text = "Tournament Name";
             // 
@@ -81,7 +81,7 @@ namespace TrackerUI
             // 
             this.entryFeeValue.Location = new System.Drawing.Point(210, 263);
             this.entryFeeValue.Name = "entryFeeValue";
-            this.entryFeeValue.Size = new System.Drawing.Size(155, 43);
+            this.entryFeeValue.Size = new System.Drawing.Size(155, 36);
             this.entryFeeValue.TabIndex = 13;
             this.entryFeeValue.Tag = "0";
             this.entryFeeValue.Text = "0";
@@ -93,7 +93,7 @@ namespace TrackerUI
             this.entryFeeLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.entryFeeLabel.Location = new System.Drawing.Point(51, 261);
             this.entryFeeLabel.Name = "entryFeeLabel";
-            this.entryFeeLabel.Size = new System.Drawing.Size(153, 45);
+            this.entryFeeLabel.Size = new System.Drawing.Size(125, 37);
             this.entryFeeLabel.TabIndex = 12;
             this.entryFeeLabel.Text = "Entry Fee";
             // 
@@ -102,7 +102,7 @@ namespace TrackerUI
             this.selectTeamDropBox.FormattingEnabled = true;
             this.selectTeamDropBox.Location = new System.Drawing.Point(59, 412);
             this.selectTeamDropBox.Name = "selectTeamDropBox";
-            this.selectTeamDropBox.Size = new System.Drawing.Size(375, 45);
+            this.selectTeamDropBox.Size = new System.Drawing.Size(375, 38);
             this.selectTeamDropBox.TabIndex = 15;
             // 
             // selectTeamLabel
@@ -112,7 +112,7 @@ namespace TrackerUI
             this.selectTeamLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.selectTeamLabel.Location = new System.Drawing.Point(51, 364);
             this.selectTeamLabel.Name = "selectTeamLabel";
-            this.selectTeamLabel.Size = new System.Drawing.Size(191, 45);
+            this.selectTeamLabel.Size = new System.Drawing.Size(156, 37);
             this.selectTeamLabel.TabIndex = 14;
             this.selectTeamLabel.Text = "Select Team";
             // 
@@ -121,7 +121,7 @@ namespace TrackerUI
             this.createNewTeamLink.AutoSize = true;
             this.createNewTeamLink.Location = new System.Drawing.Point(248, 364);
             this.createNewTeamLink.Name = "createNewTeamLink";
-            this.createNewTeamLink.Size = new System.Drawing.Size(222, 38);
+            this.createNewTeamLink.Size = new System.Drawing.Size(174, 30);
             this.createNewTeamLink.TabIndex = 16;
             this.createNewTeamLink.TabStop = true;
             this.createNewTeamLink.Text = "create new team";
@@ -156,10 +156,10 @@ namespace TrackerUI
             // 
             this.tournamentPlayersListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tournamentPlayersListBox.FormattingEnabled = true;
-            this.tournamentPlayersListBox.ItemHeight = 37;
+            this.tournamentPlayersListBox.ItemHeight = 30;
             this.tournamentPlayersListBox.Location = new System.Drawing.Point(503, 145);
             this.tournamentPlayersListBox.Name = "tournamentPlayersListBox";
-            this.tournamentPlayersListBox.Size = new System.Drawing.Size(395, 187);
+            this.tournamentPlayersListBox.Size = new System.Drawing.Size(395, 182);
             this.tournamentPlayersListBox.TabIndex = 19;
             // 
             // tournamentPlayersLabel
@@ -169,7 +169,7 @@ namespace TrackerUI
             this.tournamentPlayersLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.tournamentPlayersLabel.Location = new System.Drawing.Point(495, 74);
             this.tournamentPlayersLabel.Name = "tournamentPlayersLabel";
-            this.tournamentPlayersLabel.Size = new System.Drawing.Size(242, 45);
+            this.tournamentPlayersLabel.Size = new System.Drawing.Size(198, 37);
             this.tournamentPlayersLabel.TabIndex = 20;
             this.tournamentPlayersLabel.Text = "Teams / Players";
             // 
@@ -206,18 +206,18 @@ namespace TrackerUI
             this.prizesLabel.ForeColor = System.Drawing.SystemColors.Highlight;
             this.prizesLabel.Location = new System.Drawing.Point(495, 380);
             this.prizesLabel.Name = "prizesLabel";
-            this.prizesLabel.Size = new System.Drawing.Size(242, 45);
+            this.prizesLabel.Size = new System.Drawing.Size(85, 37);
             this.prizesLabel.TabIndex = 23;
-            this.prizesLabel.Text = "Teams / Players";
+            this.prizesLabel.Text = "Prizes";
             // 
             // prizesListBox
             // 
             this.prizesListBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.prizesListBox.FormattingEnabled = true;
-            this.prizesListBox.ItemHeight = 37;
+            this.prizesListBox.ItemHeight = 30;
             this.prizesListBox.Location = new System.Drawing.Point(503, 451);
             this.prizesListBox.Name = "prizesListBox";
-            this.prizesListBox.Size = new System.Drawing.Size(395, 187);
+            this.prizesListBox.Size = new System.Drawing.Size(395, 182);
             this.prizesListBox.TabIndex = 22;
             // 
             // createTorunamentButton
@@ -235,7 +235,7 @@ namespace TrackerUI
             // 
             // CreateTournament
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 37F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 30F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1085, 761);

@@ -84,5 +84,10 @@ namespace TrackerLibrary.Connections
 
             return model;
         }
+
+        public List<TeamModel> GetTeam_All()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

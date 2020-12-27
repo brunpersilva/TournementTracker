@@ -37,9 +37,9 @@ namespace TrackerUI
 
         private void WireupList()
         {
-            selectTeamMwmberDropDown.DataSource = null;
-            selectTeamMwmberDropDown.DataSource = availableTeamMembers;
-            selectTeamMwmberDropDown.DisplayMember = "FullName";
+            selectTeamMemberDropDown.DataSource = null;
+            selectTeamMemberDropDown.DataSource = availableTeamMembers;
+            selectTeamMemberDropDown.DisplayMember = "FullName";
 
             teamMembersListBox.DataSource = null;
             teamMembersListBox.DataSource = selectectTeamMembers;
@@ -98,7 +98,7 @@ namespace TrackerUI
 
         private void addTeamMemberButton_Click(object sender, EventArgs e)
         {
-            PersonModel p = (PersonModel)selectTeamMwmberDropDown.SelectedItem;
+            PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
             if (p != null)
             {
                 availableTeamMembers.Remove(p); //Remove from available list

@@ -1,9 +1,0 @@
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\bin\Debug\TrackerLibrary.dll
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\bin\Debug\TrackerLibrary.pdb
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\bin\Debug\Dapper.dll
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\bin\Debug\Dapper.xml
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CoreCompileInputs.cache
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csproj.CopyComplete
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\obj\Debug\TrackerLibrary.dll
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\obj\Debug\TrackerLibrary.pdb
-C:\Users\miria\Documents\GitHub\TournementTracker\TrackerLibrary\obj\Debug\TrackerLibrary.csprojAssemblyReference.cache

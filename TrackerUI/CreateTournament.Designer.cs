@@ -125,6 +125,7 @@ namespace TrackerUI
             this.createNewTeamLink.TabIndex = 16;
             this.createNewTeamLink.TabStop = true;
             this.createNewTeamLink.Text = "create new team";
+            this.createNewTeamLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.createNewTeamLink_LinkClicked);
             // 
             // addTeamButton
             // 

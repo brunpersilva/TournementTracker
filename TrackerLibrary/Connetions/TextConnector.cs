@@ -13,12 +13,13 @@ namespace TrackerLibrary.Connections
         private const string PrizesFile = "PrizeModels.csv";
         private const string PeopleFile = "PersonModels.csv";
         private const string TeamFile = "TeamModel.csv";
+        private const string TournamentFile = "TournamentModels.csv";
 
         // TODO - Wire up the CreatePrize for text files.
         public PrizeModel CreatePrize(PrizeModel model)
         {
             //Load the text file and convert the text to List<PrizeModel>
-            List<PrizeModel> prizes = PrizesFile.FullFilePath().LoadFile().ConveertToPrizeModels();
+            List<PrizeModel> prizes = PrizesFile.FullFilePath().LoadFile().ConvertToPrizeModels();
 
             //Find the max ID
             int currentId = 1;
@@ -90,9 +91,26 @@ namespace TrackerLibrary.Connections
             return TeamFile.FullFilePath().LoadFile().ConvertToTeamModels(PeopleFile);
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        //TODO  - change from void to TournamentModel
+        public void CreateTournament(TournamentModel model)
         {
-            throw new NotImplementedException();
+            List<TournamentModel> tournaments = TournamentFile
+                .FullFilePath()
+                .LoadFile()
+                .ConvertToTournamentModel(TeamFile, PeopleFile, PrizesFile);
+
+            int currentId = 1;
+
+            if (tournaments.Count > 0)
+            {
+                currentId = tournaments.OrderByDescending(x => x.Id).First().Id + 1;
+            }
+
+            model.Id = currentId;
+            tournaments.Add(model);
+            tournaments.SaveToTournamentFiles(TournamentFile);
+
+
         }
     }
 }

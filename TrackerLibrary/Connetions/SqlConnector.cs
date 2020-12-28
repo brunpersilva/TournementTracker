@@ -116,7 +116,7 @@ namespace TrackerLibrary.Connections
             return output;
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -124,7 +124,7 @@ namespace TrackerLibrary.Connections
                 SaveTournamentPrizes(model, connection);
                 SaveTournamentEntries(model, connection);
 
-                return model;
+   
             }
         }
 

@@ -115,5 +115,55 @@ namespace TrackerLibrary.Connections
 
             return output;
         }
+
+        public TournamentModel CreateTournament(TournamentModel model)
+        {
+            using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
+            {
+                SaveTournament(model, connection);
+                SaveTournamentPrizes(model, connection);
+                SaveTournamentEntries(model, connection);
+
+                return model;
+            }
+        }
+
+        private void SaveTournament(TournamentModel model, IDbConnection connection)
+        {
+            var p = new DynamicParameters();
+            p.Add("@TournamentName", model.TournamentName);
+            p.Add("@EntryFee", model.EntryFee);
+            p.Add("@Id", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
+            connection.Execute("dbo.spTournaments_Insert", p, commandType: CommandType.StoredProcedure);
+            model.Id = p.Get<int>("@id");
+        }
+
+        private void SaveTournamentPrizes(TournamentModel model, IDbConnection connection)
+        {
+            foreach (PrizeModel pz in model.Prizes)
+            {
+                var p = new DynamicParameters();
+                p.Add("@TournamentId", model.Id);
+                p.Add("@PrizeId", pz.Id);
+                p.Add("@Id", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spTournamentPrizes_Insert", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        private void SaveTournamentEntries(TournamentModel model, IDbConnection connection)
+        {
+            foreach (TeamModel tm in model.EnteredTeam)
+            {
+                var p = new DynamicParameters();
+                p.Add("@TournamentId", model.Id);
+                p.Add("@TeamId", tm.Id);
+                p.Add("@Id", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                connection.Execute("dbo.spTournamentEntries_Insert", commandType: CommandType.StoredProcedure);
+            }
+        }
+
+
     }
 }

@@ -11,29 +11,40 @@ namespace TrackerLibrary.Connections
     public static class GlobalConfig
     {
         public static IDataConnection Connection { get; private set; }
+        private static Dictionary<DatabaseType, Lazy<IDataConnection>> _strategiesConnection = new Dictionary<DatabaseType, Lazy<IDataConnection>>
+        {
+            [DatabaseType.Sql] = new Lazy<IDataConnection>(() => new SqlConnector()),
+            [DatabaseType.TextFile] = new Lazy<IDataConnection>(() => new TextConnector())
+        };
 
         public static void InitializedConnections(DatabaseType db)
         {
-
-            if (db == DatabaseType.Sql)
-            {
-                // TODO - Set up the sql properly
-                SqlConnector sql = new SqlConnector();
-                Connection = sql;
-            }
-
-            else if (db == DatabaseType.TextFile)
-            {
-                // TODO - CREATE TEXT CONNECTION
-                TextConnector text = new TextConnector();
-                Connection = text;
-;
-            }
-
+            Connection = _strategiesConnection[db].Value;
         }
+
         public static string CnnString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
+
+        //        public static void InitializedConnections(DatabaseType db)
+        //        {
+
+        //            if (db == DatabaseType.Sql)
+        //            {
+        //                // TODO - Set up the sql properly
+        //                SqlConnector sql = new SqlConnector();
+        //                Connection = sql;
+        //            }
+
+        //            else if (db == DatabaseType.TextFile)
+        //            {
+        //                // TODO - CREATE TEXT CONNECTION
+        //                TextConnector text = new TextConnector();
+        //                Connection = text;
+        //;
+        //            }
+
     }
 }
+

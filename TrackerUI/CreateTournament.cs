@@ -123,6 +123,8 @@ namespace TrackerUI
             tm.TournamentName = tournamentNameValue.Text;
             tm.EntryFee = fee;
             tm.Prizes = selectedPrizes;
+            tm.EnteredTeam = selectedTeams;
+
 
             //Todo - Wire up our Matchups
             TournamentLogic.CreateRounds(tm);

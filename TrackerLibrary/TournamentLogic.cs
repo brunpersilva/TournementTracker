@@ -58,10 +58,11 @@ namespace TrackerLibrary
         {
             List<MatchupModel> output = new List<MatchupModel>();
             MatchupModel currentmodel = new MatchupModel();
-
+            
             foreach (TeamModel team in teams)
             {
-                currentmodel.Entries.Add(new MatchupEntryModel { TeamCompeting = team });
+                currentmodel.Entries.Add(new MatchupEntryModel { TeamCompeting = team});
+
                 if (byes > 0 || currentmodel.Entries.Count > 1)
                 {
                     currentmodel.MatchupRound = 1;

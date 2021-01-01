@@ -10,6 +10,15 @@ namespace TrackerLibrary.Connections
 {
     public static class GlobalConfig
     {
+
+        public const string PrizesFile = "PrizeModels.csv";
+        public const string PeopleFile = "PersonModels.csv";
+        public const string TeamFile = "TeamModel.csv";
+        public const string TournamentFile = "TournamentModels.csv";
+        public const string MatchupFile = "MatchupFile.csv";
+        public const string MatchupEntryFile = "MatchupEntryFile.csv";
+
+
         public static IDataConnection Connection { get; private set; }
         private static Dictionary<DatabaseType, Lazy<IDataConnection>> _strategiesConnection = new Dictionary<DatabaseType, Lazy<IDataConnection>>
         {

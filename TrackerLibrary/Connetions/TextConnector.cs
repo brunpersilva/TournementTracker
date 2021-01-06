@@ -110,5 +110,13 @@ namespace TrackerLibrary.Connections
 
 
         }
+
+        public List<TournamentModel> GetTournament_All()
+        {
+            return GlobalConfig.TournamentFile
+                .FullFilePath()
+                .LoadFile()
+                .ConvertToTournamentModel(GlobalConfig.TeamFile, GlobalConfig.PeopleFile, GlobalConfig.PrizesFile);
+        }
     }
 }

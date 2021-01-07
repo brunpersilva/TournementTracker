@@ -35,7 +35,6 @@ namespace TrackerLibrary.Connections
                 model.Id = p.Get<int>("@Id");
 
                 return model;
-
             }
         }
 
@@ -55,16 +54,13 @@ namespace TrackerLibrary.Connections
                 model.Id = p.Get<int>("@Id");
 
                 return model;
-
             }
         }
-
         public List<PersonModel> GetPerson_All()
         {
             List<PersonModel> output;
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
-
                 output = connection.Query<PersonModel>("dbo.spPeople_GetAll").ToList();
             }
 
@@ -91,7 +87,6 @@ namespace TrackerLibrary.Connections
                 }
 
                 return model;
-
             }
         }
 
@@ -133,7 +128,6 @@ namespace TrackerLibrary.Connections
             p.Add("@id", 1, dbType: DbType.Int32, direction: ParameterDirection.Output);
             connection.Execute("dbo.spTournaments_Insert", p, commandType: CommandType.StoredProcedure);
             model.Id = p.Get<int>("@id");
-
         }
 
         private void SaveTournamentPrizes(TournamentModel model, IDbConnection connection)
@@ -180,7 +174,7 @@ namespace TrackerLibrary.Connections
                     foreach (MatchupEntryModel entry in matchup.Entries)
                     {
                         p = new DynamicParameters();
-                        p.Add("@MatchupId", entry.Id);
+                        p.Add("@MatchupId", matchup.Id);
                         p.Add("@ParentMatchupId", entry.ParentMatchup?.Id);
                         p.Add("@TeamCompetingId", entry.TeamCompeting?.Id);
                         p.Add("@id", 0, dbType: DbType.Int32, direction: ParameterDirection.Output);
@@ -202,9 +196,12 @@ namespace TrackerLibrary.Connections
                 foreach (TournamentModel t in output)
                 {
                     //Populate Prizes
+                    p = new DynamicParameters();
                     p.Add("@TournamentId", t.Id);
                     t.Prizes = connection.Query<PrizeModel>("dbo.Prizes_GetByTournament", p, commandType: CommandType.StoredProcedure).ToList();
                     //Populate Teams
+                    p = new DynamicParameters();
+                    p.Add("@TournamentId", t.Id);
                     t.EnteredTeam = connection.Query<TeamModel>("dbo.spTeam_GetByTournament", p, commandType: CommandType.StoredProcedure).ToList();
 
                     foreach (TeamModel team in t.EnteredTeam)

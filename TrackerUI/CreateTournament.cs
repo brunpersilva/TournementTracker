@@ -133,6 +133,8 @@ namespace TrackerUI
             //Create all the prizes antries
             //Create all the teams entries
             GlobalConfig.Connection.CreateTournament(tm);
+
+
         }
     }
 }

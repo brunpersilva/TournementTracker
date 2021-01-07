@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using TrackerLibrary.Connections;
 using TrackerLibrary.Models;
@@ -27,6 +21,19 @@ namespace TrackerUI
         {
             InitializeComponent();
             WireUpList();
+        }
+
+        private void createTournamentButton_Click(object sender, EventArgs e)
+        {
+            CreateTournament frm = new CreateTournament();
+            frm.Show();
+        }
+
+        private void loadTournamentButton_Click(object sender, EventArgs e)
+        {
+            TournamentModel tm = (TournamentModel)loadExistingTournamentDropBox.SelectedItem;
+            TournamentViewerForm frm = new TournamentViewerForm(tm);
+            frm.Show();
         }
     }
 }

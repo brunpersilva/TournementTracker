@@ -18,7 +18,6 @@ namespace TrackerLibrary.Models
         /// Team Identifier
         /// </summary>
         public int TeamCompetingId { get; set; }
-
         /// <summary>
         /// Represents the score for this particular team
         /// </summary>

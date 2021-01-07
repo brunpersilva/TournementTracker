@@ -32,7 +32,7 @@ namespace TrackerUI
             this.headerLabel = new System.Windows.Forms.Label();
             this.tournmantName = new System.Windows.Forms.Label();
             this.roundLabel = new System.Windows.Forms.Label();
-            this.roundDropBox = new System.Windows.Forms.ComboBox();
+            this.roundDropDown = new System.Windows.Forms.ComboBox();
             this.unplayedOnlyCheckbox = new System.Windows.Forms.CheckBox();
             this.matchupListBox = new System.Windows.Forms.ListBox();
             this.teamOneName = new System.Windows.Forms.Label();
@@ -40,7 +40,7 @@ namespace TrackerUI
             this.teamOneScoreValue = new System.Windows.Forms.TextBox();
             this.teamTwoScoreValue = new System.Windows.Forms.TextBox();
             this.teamTwoScoreLabel = new System.Windows.Forms.Label();
-            this.teamTwoLabel = new System.Windows.Forms.Label();
+            this.teamTwoName = new System.Windows.Forms.Label();
             this.versusLabel = new System.Windows.Forms.Label();
             this.scoreButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -61,7 +61,7 @@ namespace TrackerUI
             this.tournmantName.AutoSize = true;
             this.tournmantName.Font = new System.Drawing.Font("Segoe UI Light", 28.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tournmantName.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.tournmantName.Location = new System.Drawing.Point(299, 35);
+            this.tournmantName.Location = new System.Drawing.Point(295, 35);
             this.tournmantName.Name = "tournmantName";
             this.tournmantName.Size = new System.Drawing.Size(193, 65);
             this.tournmantName.TabIndex = 1;
@@ -78,13 +78,14 @@ namespace TrackerUI
             this.roundLabel.TabIndex = 2;
             this.roundLabel.Text = "Round:";
             // 
-            // roundDropBox
+            // roundDropDown
             // 
-            this.roundDropBox.FormattingEnabled = true;
-            this.roundDropBox.Location = new System.Drawing.Point(176, 120);
-            this.roundDropBox.Name = "roundDropBox";
-            this.roundDropBox.Size = new System.Drawing.Size(259, 44);
-            this.roundDropBox.TabIndex = 3;
+            this.roundDropDown.FormattingEnabled = true;
+            this.roundDropDown.Location = new System.Drawing.Point(176, 120);
+            this.roundDropDown.Name = "roundDropDown";
+            this.roundDropDown.Size = new System.Drawing.Size(259, 44);
+            this.roundDropDown.TabIndex = 3;
+            this.roundDropDown.SelectedIndexChanged += new System.EventHandler(this.roundDropDown_SelectedIndexChanged);
             // 
             // unplayedOnlyCheckbox
             // 
@@ -108,6 +109,7 @@ namespace TrackerUI
             this.matchupListBox.Name = "matchupListBox";
             this.matchupListBox.Size = new System.Drawing.Size(414, 326);
             this.matchupListBox.TabIndex = 5;
+            this.matchupListBox.SelectedIndexChanged += new System.EventHandler(this.matchupListBox_SelectedIndexChanged);
             // 
             // teamOneName
             // 
@@ -156,16 +158,16 @@ namespace TrackerUI
             this.teamTwoScoreLabel.TabIndex = 10;
             this.teamTwoScoreLabel.Text = "Score";
             // 
-            // teamTwoLabel
+            // teamTwoName
             // 
-            this.teamTwoLabel.AutoSize = true;
-            this.teamTwoLabel.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.teamTwoLabel.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.teamTwoLabel.Location = new System.Drawing.Point(476, 453);
-            this.teamTwoLabel.Name = "teamTwoLabel";
-            this.teamTwoLabel.Size = new System.Drawing.Size(202, 45);
-            this.teamTwoLabel.TabIndex = 9;
-            this.teamTwoLabel.Text = "<team two>";
+            this.teamTwoName.AutoSize = true;
+            this.teamTwoName.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.teamTwoName.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.teamTwoName.Location = new System.Drawing.Point(476, 453);
+            this.teamTwoName.Name = "teamTwoName";
+            this.teamTwoName.Size = new System.Drawing.Size(202, 45);
+            this.teamTwoName.TabIndex = 9;
+            this.teamTwoName.Text = "<team two>";
             // 
             // versusLabel
             // 
@@ -201,13 +203,13 @@ namespace TrackerUI
             this.Controls.Add(this.versusLabel);
             this.Controls.Add(this.teamTwoScoreValue);
             this.Controls.Add(this.teamTwoScoreLabel);
-            this.Controls.Add(this.teamTwoLabel);
+            this.Controls.Add(this.teamTwoName);
             this.Controls.Add(this.teamOneScoreValue);
             this.Controls.Add(this.teamOneScoreLabel);
             this.Controls.Add(this.teamOneName);
             this.Controls.Add(this.matchupListBox);
             this.Controls.Add(this.unplayedOnlyCheckbox);
-            this.Controls.Add(this.roundDropBox);
+            this.Controls.Add(this.roundDropDown);
             this.Controls.Add(this.roundLabel);
             this.Controls.Add(this.tournmantName);
             this.Controls.Add(this.headerLabel);
@@ -225,7 +227,7 @@ namespace TrackerUI
         private System.Windows.Forms.Label headerLabel;
         private System.Windows.Forms.Label tournmantName;
         private System.Windows.Forms.Label roundLabel;
-        private System.Windows.Forms.ComboBox roundDropBox;
+        private System.Windows.Forms.ComboBox roundDropDown;
         private System.Windows.Forms.CheckBox unplayedOnlyCheckbox;
         private System.Windows.Forms.ListBox matchupListBox;
         private System.Windows.Forms.Label teamOneName;
@@ -233,7 +235,7 @@ namespace TrackerUI
         private System.Windows.Forms.TextBox teamOneScoreValue;
         private System.Windows.Forms.TextBox teamTwoScoreValue;
         private System.Windows.Forms.Label teamTwoScoreLabel;
-        private System.Windows.Forms.Label teamTwoLabel;
+        private System.Windows.Forms.Label teamTwoName;
         private System.Windows.Forms.Label versusLabel;
         private System.Windows.Forms.Button scoreButton;
     }

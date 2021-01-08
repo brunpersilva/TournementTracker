@@ -19,7 +19,7 @@ namespace TrackerLibrary.Connections
         /// </summary>
         /// <param name="model">The prize information.</param>
         /// <returns>The prize information, including unique identifier.</returns>
-        public PrizeModel CreatePrize(PrizeModel model)
+        public void CreatePrize(PrizeModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -33,12 +33,10 @@ namespace TrackerLibrary.Connections
                 connection.Execute("dbo.spPrizes_Insert", p, commandType: CommandType.StoredProcedure);
 
                 model.Id = p.Get<int>("@Id");
-
-                return model;
             }
         }
 
-        public PersonModel CreatePerson(PersonModel model)
+        public void CreatePerson(PersonModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -53,7 +51,6 @@ namespace TrackerLibrary.Connections
 
                 model.Id = p.Get<int>("@Id");
 
-                return model;
             }
         }
         public List<PersonModel> GetPerson_All()
@@ -67,7 +64,7 @@ namespace TrackerLibrary.Connections
             return output;
         }
 
-        public TeamModel CreateTeam(TeamModel model)
+        public void CreateTeam(TeamModel model)
         {
             using (IDbConnection connection = new SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -85,7 +82,6 @@ namespace TrackerLibrary.Connections
                     p.Add("@PersonId", tm.Id);
                     connection.Execute("dbo.spTeamMembers_Insert", p, commandType: CommandType.StoredProcedure);
                 }
-                return model;
             }
         }
 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using TrackerLibrary;
 using TrackerLibrary.Connections;
 using TrackerLibrary.Models;
 
@@ -138,86 +139,52 @@ namespace TrackerUI
 
         private void scoreButton_Click(object sender, EventArgs e)
         {
-            SaveScore();
-            LoadMatchups();
-        }
-
-        private void SaveScore()
-        {
-            MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
-            double teamOneScore = 0;
-            double teamTwoScore = 0;
-
-            for (int i = 0; i < m.Entries.Count; i++)
             {
-                if (i == 0)
+                MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
+                double teamOneScore = 0;
+                double teamTwoScore = 0;
+
+                for (int i = 0; i < m.Entries.Count; i++)
                 {
-                    if (m.Entries[0].TeamCompeting != null)
+                    if (i == 0)
                     {
-                        teamOneName.Text = m.Entries[0].TeamCompeting.TeamName;
-                        bool scoreValid = double.TryParse(teamOneScoreValue.Text, out teamOneScore);
-                        if (scoreValid)
+                        if (m.Entries[0].TeamCompeting != null)
                         {
-                            m.Entries[0].Score = teamOneScore;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please enter a valid score for Team 1");
-                            return;
-                        }
-
-                    }
-                }
-                if (i == 1)
-                {
-                    if (m.Entries[0].TeamCompeting != null)
-                    {
-                        bool scoreValid = double.TryParse(teamTwoScoreValue.Text, out teamTwoScore);
-                        if (scoreValid)
-                        {
-                            m.Entries[0].Score = teamTwoScore;
-                        }
-                        else
-                        {
-                            MessageBox.Show("Please enter a valid score for Team 1");
-                            return;
-                        }
-                    }
-                }
-            }
-            if (teamOneScore > teamTwoScore)
-            {
-                //Team one wins
-                m.Winner = m.Entries[0].TeamCompeting;
-            }
-            else if (teamTwoScore > teamOneScore)
-            {
-                m.Winner = m.Entries[1].TeamCompeting;
-            }
-            else
-            {
-                MessageBox.Show("I do not handle tie games");
-            }
-
-            foreach (List<MatchupModel> round in _tournament.Rounds)
-            {
-                foreach (MatchupModel rm in round)
-                {
-                    foreach (MatchupEntryModel me in rm.Entries)
-                    {
-                        if (me.ParentMatchup != null)
-                        {
-                            if (me.ParentMatchup.Id == m.Id)
+                            teamOneName.Text = m.Entries[0].TeamCompeting.TeamName;
+                            bool scoreValid = double.TryParse(teamOneScoreValue.Text, out teamOneScore);
+                            if (scoreValid)
                             {
-                                me.TeamCompeting = m.Winner;
-                                GlobalConfig.Connection.UpdateMatchup(rm);
+                                m.Entries[0].Score = teamOneScore;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter a valid score for Team 1");
+                                return;
+                            }
+
+                        }
+                    }
+                    if (i == 1)
+                    {
+                        if (m.Entries[0].TeamCompeting != null)
+                        {
+                            bool scoreValid = double.TryParse(teamTwoScoreValue.Text, out teamTwoScore);
+                            if (scoreValid)
+                            {
+                                m.Entries[0].Score = teamTwoScore;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Please enter a valid score for Team 1");
+                                return;
                             }
                         }
                     }
                 }
-
+                TournamentLogic.UpdateTournamentResult(_tournament);
+                LoadMatchups();
+                GlobalConfig.Connection.UpdateMatchup(m);
             }
-            GlobalConfig.Connection.UpdateMatchup(m);
         }
     }
 }

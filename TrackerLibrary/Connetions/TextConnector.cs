@@ -99,8 +99,7 @@ namespace TrackerLibrary.Connections
             model.SaveRoundsToFile();
             tournaments.Add(model);
             tournaments.SaveToTournamentFiles();
-
-
+            TournamentLogic.UpdateTournamentResult(model);
         }
 
         public List<TournamentModel> GetTournament_All()

@@ -126,7 +126,33 @@ namespace TrackerUI
                 }
             }
         }
+        private string ValidateData()
+        {
+            string output = "";
+            double teamOneScore = 0;
+            double teamTwoScore = 0;
+            bool scoreOneValid = double.TryParse(teamOneScoreValue.Text, out teamOneScore);
+            bool scoreTwoValid = double.TryParse(teamTwoScoreValue.Text, out teamTwoScore);
 
+            if (!scoreOneValid)
+            {
+                output = "The score 1 value is not a valid number";
+            }
+            else if (!scoreTwoValid)
+            {
+                output = "The score 2 value is not a valid number";
+            }
+            else if (teamOneScore == 0 && teamTwoScore == 0)
+            {
+                output = "You did not enter a score for either team";
+            }
+            else if (teamOneScore == teamTwoScore)
+            {
+                output = "We do not allow tie in this application";
+            }
+
+            return output;
+        }
         private void matchupListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             LoadMatchup();
@@ -139,6 +165,13 @@ namespace TrackerUI
 
         private void scoreButton_Click(object sender, EventArgs e)
         {
+            string errorMessage = ValidateData();
+
+            if (errorMessage.Length > 0)
+            {
+                MessageBox.Show($"Error message: {errorMessage}");
+                return;
+            }
             {
                 MatchupModel m = (MatchupModel)matchupListBox.SelectedItem;
                 double teamOneScore = 0;
@@ -171,7 +204,7 @@ namespace TrackerUI
                             bool scoreValid = double.TryParse(teamTwoScoreValue.Text, out teamTwoScore);
                             if (scoreValid)
                             {
-                                m.Entries[0].Score = teamTwoScore;
+                                m.Entries[1].Score = teamTwoScore;
                             }
                             else
                             {
@@ -181,7 +214,15 @@ namespace TrackerUI
                         }
                     }
                 }
-                TournamentLogic.UpdateTournamentResult(_tournament);
+
+                try
+                {
+                    TournamentLogic.UpdateTournamentResult(_tournament);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"The Application had the following error: {ex.Message}");
+                }
                 LoadMatchups();
                 GlobalConfig.Connection.UpdateMatchup(m);
             }

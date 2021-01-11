@@ -50,11 +50,11 @@ namespace TrackerLibrary
 
             if (endingRound > startingRound)
             {
-                AlertUSersToNewRound(model);
+                model.AlertUSersToNewRound();
             }
         }
 
-        private static void AlertUSersToNewRound(this TournamentModel model)
+        public static void AlertUSersToNewRound(this TournamentModel model)
         {
             int currentRoundNumber = model.CheckCurrentRound();
             List<MatchupModel> currentRound = model.Rounds.Where(x=> x.First().MatchupRound == currentRoundNumber).First();

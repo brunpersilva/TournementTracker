@@ -54,6 +54,7 @@
   <ItemGroup>
     <Compile Include="Connetions\GlobalConfig.cs" />
     <Compile Include="Connetions\IDataConnection.cs" />
+    <Compile Include="Models\EmailLogic.cs" />
     <Compile Include="Models\PrizeModels.cs" />
     <Compile Include="Connetions\TextConnectorProcessor.cs" />
     <Compile Include="Enums\DatabaseType.cs" />

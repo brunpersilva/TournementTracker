@@ -36,6 +36,12 @@ namespace TrackerLibrary.Connections
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
 
+        public static string AppKeyLookup(string key)
+        {
+            return ConfigurationManager.AppSettings[key];
+        }
+
+
         //        public static void InitializedConnections(DatabaseType db)
         //        {
 

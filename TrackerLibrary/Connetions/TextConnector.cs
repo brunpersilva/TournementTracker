@@ -114,5 +114,17 @@ namespace TrackerLibrary.Connections
         {
             model.UpdateMatchupToFile();
         }
+
+        public void CompleteTournament(TournamentModel model)
+        {
+            List<TournamentModel> tournaments = GlobalConfig.TournamentFile
+                .FullFilePath()
+                .LoadFile()
+                .ConvertToTournamentModel();
+
+            tournaments.Remove(model);
+            tournaments.SaveToTournamentFiles();
+            TournamentLogic.UpdateTournamentResult(model);
+        }
     }
 }

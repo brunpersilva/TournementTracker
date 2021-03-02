@@ -164,7 +164,7 @@ namespace TrackerLibrary
                 body.AppendLine($"<p>{runnerUp.TeamName} will receive ${runnerUp}</p>");
 
             }
-            body.AppendLine("<p>Thanks for a great tournament everyone! <\p>");
+            body.AppendLine("<p>Thanks for a great tournament everyone! </p>");
             body.AppendLine("~Tournament Tracker");
 
             List<string> bcc = new List<string>();
